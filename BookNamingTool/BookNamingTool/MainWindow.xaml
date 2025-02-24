@@ -27,7 +27,8 @@
         </WrapPanel>
         <WrapPanel Margin="20, 0, 20, 20">
             <Button Name="SaveBtn" Width="100" Height="25" Margin="0, 0, 20, 0" Click="SaveBtn_Click">Save Book</Button>
-            <Button Name="CleanBtn" Width="100" Height="25" Margin="0, 0, 20, 0" Click="CleanBtn_Click">Clean Fields</Button>
+      <Button Name="SaveDelBtn" Width="130" Height="25" Margin="0, 0, 20, 0" Click="SaveDelBtn_Click">Save &amp; Delete Book</Button>
+      <Button Name="CleanBtn" Width="100" Height="25" Margin="0, 0, 20, 0" Click="CleanBtn_Click">Clean Fields</Button>
             <Button Name="CleanAllBtn" Width="100" Height="25" Margin="0, 0, 20, 0" Click="CleanAllBtn_Click">Clean All Fields</Button>
             <Button Name="CloseBtn" Width="100">Close</Button>
         </WrapPanel>

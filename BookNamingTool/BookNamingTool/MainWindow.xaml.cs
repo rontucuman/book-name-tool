@@ -188,5 +188,32 @@ namespace BookNamingTool
       ClearUI();
       DestinationFolderLbl.Content = string.Empty;
     }
+
+    private void SaveDelBtn_Click(object sender, RoutedEventArgs e)
+    {
+      string sourceFilePath = FilePathTextBox.Text;
+      string? destinationFolder = DestinationFolderLbl.Content?.ToString();
+
+      if (destinationFolder == null)
+      {
+        // Handle the case where destinationFolder is null
+        System.Windows.MessageBox.Show("Please select a destination folder.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        return;
+      }
+
+      // Continue with the save operation
+      string destinationFilePath = System.IO.Path.Combine(destinationFolder, _generatedFileName);
+
+      try
+      {
+        System.IO.File.Copy(sourceFilePath, destinationFilePath, true);
+        System.IO.File.Delete(sourceFilePath);
+        System.Windows.MessageBox.Show("File saved and deleted successfully.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+      }
+      catch (Exception ex)
+      {
+        System.Windows.MessageBox.Show($"Error copying or deleting file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+      }
+    }
   }
 }
